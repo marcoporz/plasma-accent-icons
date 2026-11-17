@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize the Plasma Accent icon theme
+After=graphical-session.target
+ConditionPathExists=%h/.local/share/icons/Plasma-Accent/index.theme
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/plasma-accent-icons sync --quiet
+Nice=10
+IOSchedulingClass=idle

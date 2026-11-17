@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodically synchronize the Plasma Accent icon theme
+
+[Timer]
+OnStartupSec=2min
+OnUnitActiveSec=15min
+RandomizedDelaySec=30s
+AccuracySec=1min
+Unit=plasma-accent-icons-sync.service
+
+[Install]
+WantedBy=timers.target
