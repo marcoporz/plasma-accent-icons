@@ -2,8 +2,11 @@
 
 Generate a KDE icon theme that recolors the whole desktop — including icons
 missing from the base icon pack and icons of later-installed applications — in
-a color taken from the current Plasma palette. The default is the light window
-text color, the same tone used by the clock and system-monitor panel labels.
+a color taken from the current Plasma palette. The color is not fixed: it
+follows the active KDE color scheme, so Breeze Dark, Breeze Light, Material You
+and any dynamic wallpaper palette all recolor the icons automatically. The
+default uses the light window text color, the same tone as the clock and
+system-monitor panel labels.
 
 The generated theme is called **Plasma-Accent**. It is based on
 [YAMIS](https://bitbucket.org/dirn-typo/yet-another-monochrome-icon-set)
@@ -35,6 +38,16 @@ This is full monochrome recoloring, not just accent details on folders.
 ## Preview
 
 ![Plasma Accent Icons showcase](docs/images/showcase.png)
+
+The color comes from the active KDE color scheme, not from the theme files.
+The same icons therefore follow Breeze Dark, Breeze Light, Material You and any
+dynamic palette:
+
+![The same icons with different KDE palettes](docs/images/palette-following.png)
+
+Animated example of the palette changing:
+
+![Palette cycle animation](docs/images/palette-cycle.gif)
 
 The same icon set in the two color modes:
 
@@ -166,6 +179,12 @@ Select the mode at build/install time with `--color text` or
 you pass `--color` explicitly, and switching mode triggers a full rebuild.
 Because the theme follows the palette at load time, later palette changes
 still apply immediately without rebuilding.
+
+This is why the preview above can show white, dark, blue, green, purple and
+teal icons from a single installed theme: changing the KDE color scheme (or
+letting Material You regenerate the palette from the wallpaper) changes the
+value KIconLoader substitutes for `ColorScheme-Text`. No rebuild or `sync` is
+required for a color change.
 
 ## What can and cannot be themed
 
