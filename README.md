@@ -32,6 +32,14 @@ never modified.
 
 This is full monochrome recoloring, not just accent details on folders.
 
+## Preview
+
+![Plasma Accent Icons showcase](docs/images/showcase.png)
+
+The same icon set in the two color modes:
+
+![Text and accent color modes](docs/images/color-modes.png)
+
 ## Requirements
 
 * Plasma 6 / KDE Frameworks 6 (`KIconThemes`, `kwriteconfig6`,
